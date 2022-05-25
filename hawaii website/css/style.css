@@ -16,6 +16,13 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: white;
+  -webkit-box-shadow: 3px 3px 5px 1px #5f5f5f;
+          box-shadow: 3px 3px 5px 1px #5f5f5f;
 }
 
 header div.logo {
@@ -55,6 +62,20 @@ header nav ul li a {
   color: #00c4d0;
   text-decoration: none;
   font-size: 1.35rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00c4d0;
 }
 
 @media screen and (max-width: 600px) {
@@ -162,10 +183,24 @@ section.second section.cards div.card {
   padding-bottom: 3rem;
 }
 
-section.second section.cards div.card img {
+section.second section.cards div.card div.image-container {
+  overflow: hidden;
   width: 15vw;
   height: 15vw;
   border-radius: 50%;
+}
+
+section.second section.cards div.card div.image-container img {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  -webkit-transition: all 0.5 ease;
+  transition: all 0.5 ease;
+}
+
+section.second section.cards div.card div.image-container img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 section.second section.cards div.card h4 {
@@ -194,7 +229,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  height: 60vh;
   width: 100%;
   background-color: #fbf5f5;
   -ms-flex-pack: distribute;
@@ -229,7 +264,7 @@ footer nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100vw;
+  width: 60vw;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
@@ -241,6 +276,7 @@ footer nav ul a {
   -ms-flex-preferred-size: 100px;
       flex-basis: 100px;
   font-size: 2rem;
+  width: 20vw;
   text-decoration: none;
   color: #00c4d0;
 }
@@ -254,15 +290,15 @@ footer section {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 50%;
+  width: 40%;
 }
 
 footer section img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 10vw;
-  height: 10vw;
+  width: 5vw;
+  height: 5vw;
   color: black;
 }
 /*# sourceMappingURL=style.css.map */
