@@ -8,6 +8,14 @@ div.animation {
   display: flex;
   justify-content: center;
   align-items: center;
+  div.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    svg {
+      width: 80%;
+    }
+  }
 }
 
 #logo {

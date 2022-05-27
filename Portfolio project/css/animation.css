@@ -16,6 +16,20 @@ div.animation {
           align-items: center;
 }
 
+div.animation div.logo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.animation div.logo svg {
+  width: 80%;
+}
+
 #logo {
   stroke-dasharray: 8888px;
   stroke-dashoffset: 8888px;

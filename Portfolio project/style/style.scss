@@ -40,7 +40,6 @@ header {
 
 main {
   display: flex;
-  flex-wrap: wrap;
   section.left {
     flex: 3 1 500px;
     width: 60%;
@@ -64,6 +63,96 @@ main {
       height: 18vw;
       right: 18vw;
       top: 10vh;
+    }
+  }
+  section.form {
+    width: 50%;
+    form {
+      min-height: 60vh;
+      width: 100%;
+      flex: 1 1 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      div {
+        margin: 0.5rem;
+        width: 100%;
+        label {
+          font-size: 1.5rem;
+          width: 80%;
+        }
+        input,
+        textarea {
+          width: 80%;
+          background-color: #a8ffeb;
+          font-size: 1.3rem;
+          padding: 0.15rem 0.3rem;
+          vertical-align: top;
+          border: none;
+        }
+      }
+      button {
+        align-self: center;
+        background-color: #89e7cf;
+        font-size: 2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+        padding: 1rem 2rem;
+        margin: 1rem 0rem;
+      }
+    }
+  }
+
+  section.contact {
+    flex: 1 1 500px;
+  }
+  section.table {
+    flex: 3 1 500px;
+    padding: 2rem;
+    table {
+      border-collapse: collapse;
+      tr {
+        border-bottom: 2.5px solid gray;
+        border-top: 2.5px solid gray;
+        td {
+          padding: 1rem;
+        }
+        &:hover {
+          background-color: #c3fff1;
+        }
+      }
+    }
+  }
+  section.picture {
+    flex: 1 1 600px;
+    position: relative;
+    img {
+      width: 20vw;
+    }
+    div.bluebackground {
+      background-color: #97edd9;
+      width: 20vw;
+      height: 28vw;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      z-index: -3;
+    }
+  }
+  div.line {
+    background-color: gray;
+    width: 3px;
+  }
+  section.contact {
+    flex: 1 1 500px;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    div.content {
+      h2 {
+        margin: 2rem 0rem;
+      }
     }
   }
 }
@@ -101,6 +190,25 @@ main {
         height: 40vw;
         margin-top: 3rem;
       }
+    }
+    section.picture {
+      img {
+        position: absolute;
+        left: -40vw;
+        width: 40vw;
+      }
+      div.bluebackground {
+        display: none;
+      }
+    }
+    section.form {
+      position: relative;
+      width: 70%;
+      left: -10vw;
+    }
+    section.contact {
+      position: relative;
+      left: -5vw;
     }
   }
 }
