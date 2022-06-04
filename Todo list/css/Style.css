@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+i {
+  pointer-events: none;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, right top, from(#f05993), to(#ec6ffc));
+  background: linear-gradient(90deg, #f05993, #ec6ffc);
+}
+
+body header {
+  height: 30vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body header h1 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.5rem;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+
+body form input,
+body form button {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.75rem;
+  margin: 0.1rem;
+}
+
+body form input[type="number"] {
+  width: 60px;
+  text-align: center;
+}
+
+body form input::-webkit-outer-spin-button,
+body form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body form input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body form button {
+  cursor: pointer;
+  background-color: #53c3ff;
+  color: white;
+  border-radius: 10px;
+  margin-left: 1.2rem;
+}
+
+body div.sort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body section div.todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 50vw;
+}
+
+body section div.todo p {
+  background-color: white;
+  color: black;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  font-size: 1.5rem;
+}
+
+body section div.todo p.todo-text {
+  width: 60%;
+}
+
+body section div.todo p.todo-time {
+  width: 20%;
+  text-align: center;
+}
+
+body section div.todo button {
+  width: 10%;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+body section div.todo button.finish {
+  color: #8ffa1d;
+}
+
+body section div.todo button.trash {
+  color: #312626;
+}
+
+.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.2rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@-webkit-keyframes scaleUp {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scaleDown {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+/*# sourceMappingURL=Style.css.map */

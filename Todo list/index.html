@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Todo list</title>
+    <link rel="stylesheet" href="./css/Style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Wunyu Yu Todo List</h1>
+    </header>
+    <form>
+      <input type="text" placeholder="Todo item" />
+      <input type="number" min="1" max="12" placeholder="M" required />
+      <input type="number" min="1" max="31" placeholder="D" required />
+      <button type="submit">Add+</button>
+    </form>
+    <div class="sort">
+      <button>Sort By time</button>
+    </div>
+    <section></section>
+  </body>
+  <script src="./app.js"></script>
+</html>
