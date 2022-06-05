@@ -85,6 +85,17 @@ body div.sort {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
+}
+
+body div.sort button {
+  cursor: pointer;
+  background-color: #029ef1;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-left: 1.2rem;
+  padding: 0.25rem 0.5rem;
 }
 
 body section {
