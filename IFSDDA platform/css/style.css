@@ -1,1 +1,214 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #e7e7e7e7;
+  height: 100%;
+}
+
+body header.web-top {
+  height: 15%;
+  background-color: #fafafae7;
+}
+
+body header.web-top div.top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+body header.web-top div.top img {
+  width: 20vw;
+}
+
+body header.web-top div.top p {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+body nav {
+  width: 100%;
+  height: 100%;
+  background-color: #30def5;
+}
+
+body nav div.left {
+  width: 50%;
+  height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body nav div.left ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0.25rem 3rem;
+}
+
+body nav div.left ul li {
+  list-style-type: none;
+  margin: 1rem;
+}
+
+body nav div.left ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+body nav div.left ul li a.Active {
+  color: #0e008e;
+}
+
+body section {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  left: 10%;
+  background-color: white;
+}
+
+body section div.about-us {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  margin-left: 2rem;
+}
+
+body section div.about-us img.about-us {
+  width: 50%;
+}
+
+body section div.about-us p {
+  margin-left: 1rem;
+}
+
+body section div.left {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 2rem;
+}
+
+body section div.left h1 {
+  font-size: 1.3rem;
+}
+
+body section div.left p {
+  font-size: 1rem;
+}
+
+body section div.left img {
+  width: 80%;
+}
+
+body section div.left table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+
+body section div.left table th {
+  border-bottom: solid black 0.5px;
+  padding: 0.5rem;
+}
+
+body section div.left table tr td ul li {
+  margin-left: 1rem;
+  font-size: 0.8rem;
+}
+
+body section div.right {
+  width: 30%;
+  border: solid black 1px;
+  margin: 1rem 1rem;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body section div.right div.News {
+  width: 100%;
+}
+
+body section div.right div.News table {
+  width: 80%;
+  margin: 1rem;
+}
+
+body section div.right div.News table th {
+  color: blue;
+  font-size: 1.5rem;
+  border-bottom: solid black;
+  text-align: left;
+}
+
+body section div.right div.News table tr td {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body section div.right div.News table tr td ul {
+  margin-left: 1rem;
+}
+
+body section div.right div.News table tr td ul li {
+  list-style-type: none;
+}
+/*# sourceMappingURL=style.css.map */
