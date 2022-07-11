@@ -6,10 +6,10 @@ const authRoute = require("./routes/auth-route");
 dotenv.config();
 
 mongoose
-  .connect(
-    "mongodb+srv://wunyu0088:wunyu0088@cluster0.jlgydrb.mongodb.net/?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+  .connect(process.env.mongoDBurl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connect to mongoDB atlas database.");
   })
