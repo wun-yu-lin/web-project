@@ -3,7 +3,9 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth-route");
+const profileRoute = require("./routes/profile-route");
 dotenv.config();
+require("./config/passport");
 
 mongoose
   .connect(process.env.mongoDBurl, {
@@ -24,6 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/auth", authRoute); //if url 為 /auth 會執行 authRoute module來接login的方式
 //if local login, the url was /auth/login
+app.use("/profile", profileRoute);
 
 app.get("/", (req, res) => {
   res.render("index");
