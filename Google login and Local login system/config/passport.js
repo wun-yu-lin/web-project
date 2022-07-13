@@ -2,8 +2,18 @@ require("dotenv").config();
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 const User = require("../models/user-model");
-//passport.serializeUser(()) wait for test
+passport.serializeUser((user, done) => {
+  console.log("Serializing user now");
+  done(null, user._id);
+});
 
+passport.deserializeUser((_id, done) => {
+  console.log("Deserializing user now.");
+  User.findById({ _id }).then((user) => {
+    console.log("Found user.");
+    done(null, user);
+  });
+});
 passport.use(
   new GoogleStrategy(
     {
@@ -15,7 +25,9 @@ passport.use(
     (accessToken, refreshToken, profile, done) => {
       //passport callback, google API 同意回傳帳號資訊後，回傳資料並 redirect to /auth/google/redirect endpoint
       //verify callback, if have data in mongoDB => login, if no data in DB => save data to mongoDB
+
       //console.log(profile); //return infor by google
+
       //verify 是否有帳號資料在資料庫中
       User.findOne({ googleID: profile.id }).then((foundUser) => {
         if (foundUser) {
