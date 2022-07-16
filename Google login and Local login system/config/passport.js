@@ -2,6 +2,12 @@ require("dotenv").config();
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 const User = require("../models/user-model");
+
+//profile page and logout
+// req.user;
+// req.logout();
+// req.isAuthenticator();
+
 passport.serializeUser((user, done) => {
   console.log("Serializing user now");
   done(null, user._id);
