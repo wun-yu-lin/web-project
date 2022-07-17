@@ -26,6 +26,7 @@ router.post("/signup", async (req, res) => {
     //透過flash來設定msg
     req.flash("error_msg", "此信箱已經被註冊過了! ");
     res.redirect("/auth/signup");
+    return; //return 避免跑下面的程式
   }
   const hash = await bcrypt.hash(password, 10);
   password = hash;
@@ -44,7 +45,10 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
+router.get(
+  "/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
 
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
   res.redirect("/profile");

@@ -35,6 +35,7 @@ passport.use(
       //console.log(profile); //return infor by google
 
       //verify 是否有帳號資料在資料庫中
+      console.log(profile);
       User.findOne({ googleID: profile.id }).then((foundUser) => {
         if (foundUser) {
           //if have data in mongoDB => login
@@ -46,6 +47,7 @@ passport.use(
             name: profile.displayName,
             googleID: profile.id,
             thumbnail: profile.photos[0].value,
+            email: profile.email[0].value,
           })
             .save()
             .then((newUser) => {
