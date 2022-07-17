@@ -17,6 +17,17 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    failureRedirect: "/auth/login",
+    failureFlash: "Wrong email or password.", //erorr message
+  }),
+  (req, res) => {
+    res.redirect("/profile");
+  }
+);
+//local signup
 router.post("/signup", async (req, res) => {
   console.log(req.body);
   let { name, email, password } = req.body;
@@ -40,8 +51,8 @@ router.post("/signup", async (req, res) => {
     req.flash("success_msg", "帳號成功註冊! 可以登入了! ");
     res.redirect("/auth/login");
   } catch (err) {
-    console.log(err);
-    res.status(400).send(err);
+    req.flash("error_msg", err.errors.name.properties.message);
+    res.status(400).redirect("/auth/signup");
   }
 });
 

@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    minLength: 2,
+    minLength: 3,
     maxLength: 255,
   },
   googleID: {
@@ -24,6 +24,7 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
+    minLength: 8,
     maxLength: 1024,
   },
 });
