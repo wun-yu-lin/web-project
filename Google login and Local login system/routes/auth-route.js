@@ -24,7 +24,13 @@ router.post(
     failureFlash: "Wrong email or password.", //erorr message
   }),
   (req, res) => {
-    res.redirect("/profile");
+    if (req.session.returnTo) {
+      let newUrl = req.session.returnTo;
+      req.session.returnTo = "";
+      res.redirect(newUrl);
+    } else {
+      res.redirect("/profile");
+    }
   }
 );
 //local signup
@@ -62,7 +68,13 @@ router.get(
 );
 
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
-  res.redirect("/profile");
+  if (req.session.returnTo) {
+    let newUrl = req.session.returnTo;
+    req.session.returnTo = "";
+    res.redirect(newUrl);
+  } else {
+    res.redirect("/profile");
+  }
 });
 
 module.exports = router;
