@@ -12,6 +12,21 @@ ul {
   list-style-type: none;
 }
 
+.morePicture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  button {
+    padding: 0.3rem 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background-color: rgb(15, 9, 110);
+    color: white;
+  }
+}
+
 @import "./nav";
 @import "./search";
 @import "./footer";
+@import "./picture";
