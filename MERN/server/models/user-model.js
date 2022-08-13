@@ -37,6 +37,9 @@ userSchema.methods.isStudent = function () {
 userSchema.methods.isInstructor = function () {
   return this.role == "instructor";
 };
+userSchema.methods.isAdmin = function () {
+  return this.role == "admin";
+};
 
 //mongoose schema middleware
 userSchema.pre("save", async function (next) {
@@ -49,7 +52,7 @@ userSchema.pre("save", async function (next) {
   }
 });
 
-userSchema.methods.comparePassword = function (password, cd) {
+userSchema.methods.comparePassword = function (password, cb) {
   bcrypt.compare(password, this.password, (err, isMatch) => {
     if (err) {
       return cd(err, isMatch);

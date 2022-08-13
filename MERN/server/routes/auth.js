@@ -3,6 +3,8 @@ const registerValidation = require("../validation").registerValidation;
 const loginValidation = require("../validation").loginValidation;
 const User = require("../models").userModel;
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 router.use((req, res, next) => {
   console.log("A request is coming in auth.js");
@@ -42,6 +44,47 @@ router.post("/register", async (req, res) => {
     });
   } catch (err) {
     res.status(400).send(err);
+  }
+});
+
+//login the user
+router.post("/login", async (req, res) => {
+  let { error } = loginValidation(req.body);
+
+  if (error) return res.status(400).send(error.details[0].message);
+  console.log(req.body.email);
+  try {
+    await User.findOne({ email: req.body.email }, async function (err, user) {
+      if (err) {
+        console.log("Wrong findone ");
+
+        return res.status(400).send(err);
+      }
+
+      if (!user) {
+        return res.send(401).send("User not found!");
+      }
+
+      await user.comparePassword(req.body.password, (err, isMatch) => {
+        if (isMatch) {
+          console.log("Password is match");
+          //if password compare finished, create a jsonwebtoken
+          const tokenObj = {
+            _id: user._id,
+            email: user.email,
+          };
+
+          const token = jwt.sign(tokenObj, process.env.PASSPORT_SECRET);
+          return res.send({ success: true, token: "JWT" + token, user });
+        }
+        if (err) {
+          console.log(err);
+          return res.status(401).send("wrong password!");
+        }
+      });
+    });
+  } catch (err) {
+    console.log(err);
   }
 });
 

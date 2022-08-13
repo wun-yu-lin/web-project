@@ -1,3 +1,4 @@
+const { string } = require("joi");
 const Joi = require("joi");
 
 //Register Validation
@@ -21,5 +22,16 @@ const loginValidation = (data) => {
   return schema.validate(data);
 };
 
+//course validation
+const courseValidation = (data) => {
+  const schema = Joi.object({
+    title: Joi.string().min(6).max(50).required(),
+    description: Joi.string().min(6).max(50).required(),
+    price: Joi.number().min(10).max(999).required(),
+  });
+  return schema.validate(data);
+};
+
 module.exports.registerValidation = registerValidation;
 module.exports.loginValidation = loginValidation;
+module.exports.courseValidation = courseValidation;
