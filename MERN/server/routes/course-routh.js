@@ -31,20 +31,38 @@ router.get("/:_id", async (req, res) => {
 });
 
 //search course need update
-// router.patch("/:_id", async (req, res) => {
-//   let { _id } = req.params;
-//   let course = await Course.findOne({ _id }).populate("instructor", ["email"]);
-//   if (!course) {
-//     res.status(404);
-//     return res.json({
-//       success: false,
-//       message: "Course not found.",
-//     });
-//   }
-//   if (course.instructor.equals(req.user._id) || req.user.inAdmin()){
-//     Course.findOneAndUpdate({_id})
-//   }
-// });
+router.patch("/:_id", async (req, res) => {
+  let { _id } = req.params;
+  let course = await Course.findOne({ _id }).populate("instructor", ["email"]);
+  if (!course) {
+    res.status(404);
+    return res.json({
+      success: false,
+      message: "Course not found.",
+    });
+  }
+  if (course.instructor.equals(req.user._id) || req.user.inAdmin()) {
+    await Course.findOneAndUpdate({ _id }, req.body, {
+      new: true,
+      runValidators: true,
+    })
+      .then(() => {
+        res.status(200).send("Course updated.");
+      })
+      .catch((err) => {
+        res.status(400).send({
+          success: false,
+          message: err,
+        });
+      });
+  } else {
+    res.status(403);
+    return res.json({
+      success: false,
+      message: "You do not have permission to modify the course content.  ",
+    });
+  }
+});
 
 //get all course data
 router.get("/", async (req, res) => {
@@ -87,6 +105,39 @@ router.post("/", async (req, res) => {
     res.status(200).send("New course has been saved.");
   } catch (err) {
     res.status(400).send("Cannot save course.");
+  }
+});
+
+//delete course
+router.delete("/:_id", async (req, res) => {
+  let { _id } = req.params;
+  let course = await Course.findOne({ _id });
+  if (!course) {
+    res.status(404);
+    return res.json({
+      success: false,
+      message: "Course not found.",
+    });
+  }
+
+  if (course.instructor.equals(req.user._id) || req.user.isAdmin()) {
+    Course.deleteOne({ _id })
+      .then(() => {
+        res.send("Course deleted.");
+      })
+      .catch((e) => {
+        res.send({
+          success: false,
+          message: e,
+        });
+      });
+  } else {
+    res.status(403);
+    return res.json({
+      success: false,
+      message:
+        "Only the instructor of this course or web admin can delete this course.",
+    });
   }
 });
 
