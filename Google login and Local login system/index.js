@@ -9,7 +9,6 @@ require("./config/passport");
 const passport = require("passport");
 const session = require("express-session");
 const flash = require("connect-flash");
-
 mongoose
   .connect(process.env.mongoDBurl, {
     useNewUrlParser: true,
